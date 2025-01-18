@@ -8,11 +8,40 @@ import CartCircle from '@/components/derived/Cartcircle';
 import Image from 'next/image';
 
 const dummyProducts = [
-  { id: 1, name: 'Product 1', category: 'Electronics', price: 100, description: 'Description of Product 1', image: '/images/product1.jpg' },
-  { id: 2, name: 'Product 2', category: 'Electronics', price: 200, description: 'Description of Product 2', image: '/images/product2.jpg' },
-  { id: 3, name: 'Product 3', category: 'Clothing', price: 50, description: 'Description of Product 3', image: '/images/product3.jpg' },
-  { id: 4, name: 'Product 4', category: 'Clothing', price: 120, description: 'Description of Product 4', image: '/images/product4.jpg' },
-];
+    {
+      id: 1,
+      name: 'Product 1',
+      category: 'Electronics',
+      price: 100,
+      description: 'A high-quality electronic device that combines functionality with sleek design. Perfect for everyday use and built to last.',
+      image: '/images/product1.jpg',
+    },
+    {
+      id: 2,
+      name: 'Product 2',
+      category: 'Electronics',
+      price: 200,
+      description: 'An advanced electronic gadget with cutting-edge technology, offering exceptional performance and versatility.',
+      image: '/images/product2.jpg',
+    },
+    {
+      id: 3,
+      name: 'Product 3',
+      category: 'Clothing',
+      price: 50,
+      description: 'A stylish and comfortable piece of clothing made from premium materials. Ideal for casual outings or daily wear.',
+      image: '/images/product3.jpg',
+    },
+    {
+      id: 4,
+      name: 'Product 4',
+      category: 'Clothing',
+      price: 120,
+      description: 'A fashionable and elegant garment designed for special occasions. Crafted with attention to detail and superior quality.',
+      image: '/images/product4.jpg',
+    },
+  ];
+  
 
 const Page = () => {
   const { id } = useParams();

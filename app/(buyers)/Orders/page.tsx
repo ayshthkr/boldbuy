@@ -1,22 +1,29 @@
 "use client";
 
-import { useState } from "react";
-import { useCart } from "../context/CartContext";
+import { useState,useEffect } from "react";
+
+import { UserNavbar } from "@/components/derived/usernavbar";
 
 const Orders = () => {
-  const { orders } = useCart(); // Fetch the orders from context
-  const [expandedOrder, setExpandedOrder] = useState<number | null>(null); // Track the currently expanded order
 
+  const [expandedOrder, setExpandedOrder] = useState<number | null>(null); // Track the currently expanded order
+  const [orderlist, setorderlist] = useState<any[]>([]);
   const toggleOrderDetails = (orderId: number) => {
     setExpandedOrder((prev) => (prev === orderId ? null : orderId)); // Toggle order details
   };
-
+ useEffect(() => {
+       const storedordered = JSON.parse(localStorage.getItem('orderlist')!) || [];
+       setorderlist(storedordered);
+     }, []);
+   
   return (
-    <div className="container mx-auto p-6">
+    <div className="">
+      <UserNavbar/>
+      <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-6">Your Orders</h1>
 
       <div className="space-y-4">
-        {orders.map((order) => (
+        {orderlist.map((order) => (
           <div key={order.id} className="border p-4 rounded-md shadow-md mb-4">
             <h3 className="text-xl font-semibold text-blue-600">Order #{order.id}</h3>
             <p className="text-lg font-bold text-blue-500">Total: ${order.total}</p>
@@ -54,6 +61,8 @@ const Orders = () => {
         ))}
       </div>
     </div>
+    </div>
+    
   );
 };
 
