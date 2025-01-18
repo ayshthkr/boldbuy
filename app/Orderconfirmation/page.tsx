@@ -1,13 +1,13 @@
-"use client"
-import { useRouter, useSearchParams } from 'next/navigation';
+"use client";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const OrderConfirmation = () => {
   const router = useRouter();
-  const query=useSearchParams()
-  const order =JSON.parse( query.get('order'));
-  console.log(order) 
+  const query = useSearchParams();
+  const order = JSON.parse(query.get("order")!);
+  console.log(order);
   const getTotalPrice = () => {
-    return order.items.reduce((total, item) => {
+    return order.items.reduce((total: any, item: any) => {
       return total + item.product.price * item.quantity;
     }, 0);
   };
@@ -18,20 +18,31 @@ const OrderConfirmation = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Order Confirmation</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">
+        Order Confirmation
+      </h1>
       <div className="p-4 bg-gray-100 rounded-md">
         <h2 className="text-xl font-semibold mb-2">Order #{order.id}</h2>
-        <p><strong>Status:</strong> {order.status}</p>
-        <p><strong>Total:</strong> ${order.total}</p>
+        <p>
+          <strong>Status:</strong> {order.status}
+        </p>
+        <p>
+          <strong>Total:</strong> ${order.total}
+        </p>
         <h3 className="mt-4 text-lg font-semibold">Delivery Information</h3>
-        <p>{order.deliveryInfo.address}, {order.deliveryInfo.city}, {order.deliveryInfo.zip}</p>
+        <p>
+          {order.deliveryInfo.address}, {order.deliveryInfo.city},{" "}
+          {order.deliveryInfo.zip}
+        </p>
         <h3 className="mt-4 text-lg font-semibold">Payment Method</h3>
         <p>{order.paymentMethod}</p>
         <div className="p-4 bg-gray-100 rounded-md">
           <h2 className="text-xl font-semibold mb-2">Order Summary</h2>
-          {order.items.map((item) => (
+          {order.items.map((item: any) => (
             <div key={item.id} className="flex justify-between mb-2">
-              <span>{item.product.name} x {item.quantity}</span>
+              <span>
+                {item.product.name} x {item.quantity}
+              </span>
               <span>${item.product.price * item.quantity}</span>
             </div>
           ))}
@@ -43,7 +54,7 @@ const OrderConfirmation = () => {
 
         <div className="mt-6">
           <button
-            onClick={() => router.push('/Orders')} // Use router.push for navigation
+            onClick={() => router.push("/Orders")} // Use router.push for navigation
             className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
           >
             Go to Orders
