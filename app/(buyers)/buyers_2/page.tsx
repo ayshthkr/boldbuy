@@ -140,6 +140,8 @@ export default function Page() {
               <Image
                 src={product.image}
                 alt={product.name}
+                height={48}
+                width={100}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
               <h3 className="text-xl font-semibold text-blue-600">{product.name}</h3>
