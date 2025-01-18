@@ -1,5 +1,6 @@
 "use client"
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -57,7 +58,7 @@ const BuyerTestimonials = () => {
                 <h2 className="text-4xl font-bold text-white text-center mb-12">
                     What Our Clients Say
                 </h2>
-                
+
                 <div className="relative">
                     <AnimatePresence mode='wait'>
                         <motion.div
@@ -69,7 +70,7 @@ const BuyerTestimonials = () => {
                             className="bg-white rounded-lg p-8 shadow-xl"
                         >
                             <div className="flex flex-col items-center text-center">
-                                <img
+                                <Image
                                     src={testimonials[currentIndex].image}
                                     alt={testimonials[currentIndex].name}
                                     className="w-24 h-24 rounded-full object-cover mb-4"
@@ -106,9 +107,8 @@ const BuyerTestimonials = () => {
                         <button
                             key={index}
                             onClick={() => setCurrentIndex(index)}
-                            className={`w-3 h-3 rounded-full ${
-                                index === currentIndex ? 'bg-blue-900' : 'bg-gray-300'
-                            }`}
+                            className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-blue-900' : 'bg-gray-300'
+                                }`}
                         />
                     ))}
                 </div>

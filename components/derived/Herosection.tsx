@@ -6,29 +6,29 @@ const ShuffleHero = () => {
   return (
     <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
-        
+
         <h3 className="text-4xl md:text-6xl font-semibold">
-         Shop Smater and Faster
+          Shop Smater and Faster
         </h3>
         <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
-        Explore local markets and beyond with BoldBuy. Our platform offers a variety of products, fast deliveries, and great deals. From daily essentials to unique finds, enjoy a shopping experience designed for you.
+          Explore local markets and beyond with BoldBuy. Our platform offers a variety of products, fast deliveries, and great deals. From daily essentials to unique finds, enjoy a shopping experience designed for you.
         </p>
-         <div className="flex gap-4">
-         <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
-          start shopping now
-        </button>
-        <button className="border-indigo-500 border-2 text-black font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 hover:text-white active:scale-95">
-          explore our collections
-        </button>
-         </div>
-        
+        <div className="flex gap-4">
+          <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+            start shopping now
+          </button>
+          <button className="border-indigo-500 border-2 text-black font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 hover:text-white active:scale-95">
+            explore our collections
+          </button>
+        </div>
+
       </div>
       <ShuffleGrid />
     </section>
   );
 };
 
-const shuffle = (array) => {
+const shuffle = (array: any) => {
   let currentIndex = array.length,
     randomIndex;
 
@@ -46,7 +46,7 @@ const shuffle = (array) => {
 };
 
 const squareData = [
-  
+
   {
     id: 5,
     src: "https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80",
@@ -98,7 +98,7 @@ const squareData = [
 ];
 
 const generateSquares = () => {
-  return shuffle(squareData).map((sq) => (
+  return shuffle(squareData).map((sq: any) => (
     <motion.div
       key={sq.id}
       layout
@@ -113,13 +113,13 @@ const generateSquares = () => {
 };
 
 const ShuffleGrid = () => {
-  const timeoutRef = useRef(null);
+  const timeoutRef = useRef<any>(null);
   const [squares, setSquares] = useState(generateSquares());
 
   useEffect(() => {
     shuffleSquares();
 
-    return () => clearTimeout(timeoutRef.current);
+    return () => clearTimeout(timeoutRef.current!);
   }, []);
 
   const shuffleSquares = () => {
@@ -130,7 +130,7 @@ const ShuffleGrid = () => {
 
   return (
     <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
-      {squares.map((sq) => sq)}
+      {squares.map((sq: any) => sq)}
     </div>
   );
 };
