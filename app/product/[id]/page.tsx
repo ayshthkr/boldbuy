@@ -59,7 +59,7 @@ const Page = () => {
       <p className="text-xl font-bold text-blue-500 mb-6">${product.price}</p>
 
       <button
-        onClick={() => addToCart(product.id)}
+        onClick={() => addToCart(product)}
         className="w-full py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
       >
         Add to Cart
