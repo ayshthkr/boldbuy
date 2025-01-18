@@ -1,19 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { UserNavbar } from "@/components/derived/usernavbar";
 
 export default function Dashboard() {
-  const storedUser = JSON.parse(localStorage.getItem("user")! || "{}");
-  console.log("console. iser", storedUser);
 
-  const [name, setName] = useState(storedUser.name || "");
-  const [email, setEmail] = useState(storedUser.email || "");
-  const [paymentMethod, setPaymentMethod] = useState(storedUser.paymentMethod || "");
-  const [password, setPassword] = useState(storedUser.password || ""); 
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user")! || "{}");
+    console.log("console. iser", storedUser);
+    setName(storedUser.name);
+    setEmail(storedUser.email); 
+    setPaymentMethod(storedUser.paymentMethod);
+    setPassword(storedUser.password);
+    setNewPassword(storedUser.password);
+    setStoredUser(storedUser);
+  }, []);
+
+  const [storedUser, setStoredUser] = useState<any>({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [password, setPassword] = useState(""); 
   const [newPassword, setNewPassword] = useState(""); // For new password input
   const [confirmPassword, setConfirmPassword] = useState(""); // For password confirmation
 

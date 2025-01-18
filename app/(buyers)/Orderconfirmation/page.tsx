@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter, useSearchParams } from "next/navigation";
 
 const OrderConfirmation = () => {
@@ -38,11 +39,7 @@ const OrderConfirmation = () => {
         <p>{order.paymentMethod}</p>
         <div className="p-4 bg-gray-100 rounded-md">
           <h2 className="text-xl font-semibold mb-2">Order Summary</h2>
-<<<<<<< HEAD:app/Orderconfirmation/page.tsx
           {order.items.map((item: any) => (
-=======
-          {order.items.map((item:any) => (
->>>>>>> main:app/(buyers)/Orderconfirmation/page.tsx
             <div key={item.id} className="flex justify-between mb-2">
               <span>
                 {item.product.name} x {item.quantity}
