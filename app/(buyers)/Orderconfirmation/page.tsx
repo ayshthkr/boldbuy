@@ -3,19 +3,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 const OrderConfirmation = () => {
   const router = useRouter();
-<<<<<<< HEAD:app/Orderconfirmation/page.tsx
-  const query = useSearchParams();
-  const order = JSON.parse(query.get("order")!);
-  console.log(order);
-  const getTotalPrice = () => {
-    return order.items.reduce((total: any, item: any) => {
-=======
   const query=useSearchParams()
   const order =JSON.parse( query.get('order')!);
 
   const getTotalPrice = () => {
     return order.items.reduce((total:any, item:any) => {
->>>>>>> main:app/(buyers)/Orderconfirmation/page.tsx
       return total + item.product.price * item.quantity;
     }, 0);
   };
