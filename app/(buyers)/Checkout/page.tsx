@@ -1,15 +1,22 @@
 "use client"
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
+
 
 const Checkout = () => {
-  const { cart, clearCart,placeOrder } = useCart();
+  const { cart, clearCart } = useCart();
   const [deliveryInfo, setDeliveryInfo] = useState({ address: '', city: '', zip: '' });
   const [paymentMethod, setPaymentMethod] = useState('Credit Card');
+  const [orderlist, setorderlist] = useState<any[]>([]);
   const router = useRouter();
+  useEffect(() => {
+      const storedordered = JSON.parse(localStorage.getItem('orderlist')!) || [];
+      setorderlist(storedordered);
+    }, []);
+  
 
-  // Calculate the total price based on the cart items
+
   const getTotalPrice = () => {
     return cart.reduce((total, item) => {
       return total + item.product.price * item.quantity;
@@ -17,17 +24,25 @@ const Checkout = () => {
   };
 
   // Handle placing the order
+  const newCart = cart.map(({ product, ...rest }) => {
+    const { description, image, ...filteredProduct } = product;
+    return { ...rest, product: filteredProduct };  
+  });
+  const time=new Date().getTime()
   const handlePlaceOrder = () => {
     const order = {
-      id: new Date().getTime(),
-      items: cart,
+      id: time,
+      items:newCart ,
       deliveryInfo,
       paymentMethod,
       status: 'Processing',
       total: getTotalPrice().toFixed(2),
     };
-  placeOrder(order)
-    clearCart();  // Empty the cart after placing the order
+  
+  const updatedordered = [...orderlist, order];
+  localStorage.setItem("orderlist", JSON.stringify(updatedordered));
+
+    clearCart();  
     const serializedOrder = encodeURIComponent(JSON.stringify(order));
   router.push(`/Orderconfirmation?order=${serializedOrder}`);  // Navigate to the order confirmation page
   };

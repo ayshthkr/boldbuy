@@ -4,10 +4,10 @@ import { useRouter, useSearchParams } from 'next/navigation';
 const OrderConfirmation = () => {
   const router = useRouter();
   const query=useSearchParams()
-  const order =JSON.parse( query.get('order'));
-  console.log(order) 
+  const order =JSON.parse( query.get('order')!);
+
   const getTotalPrice = () => {
-    return order.items.reduce((total, item) => {
+    return order.items.reduce((total:any, item:any) => {
       return total + item.product.price * item.quantity;
     }, 0);
   };
@@ -29,7 +29,7 @@ const OrderConfirmation = () => {
         <p>{order.paymentMethod}</p>
         <div className="p-4 bg-gray-100 rounded-md">
           <h2 className="text-xl font-semibold mb-2">Order Summary</h2>
-          {order.items.map((item) => (
+          {order.items.map((item:any) => (
             <div key={item.id} className="flex justify-between mb-2">
               <span>{item.product.name} x {item.quantity}</span>
               <span>${item.product.price * item.quantity}</span>
