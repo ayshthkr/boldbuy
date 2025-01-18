@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import CartCircle from '@/components/derived/Cartcircle';
+import Image from 'next/image';
 
 const dummyProducts = [
   { id: 1, name: 'Product 1', category: 'Electronics', price: 100, image: '/images/product1.jpg' },
@@ -74,7 +75,7 @@ export default function Page() {
           <div key={product.id} className="border p-4 rounded-md shadow-md hover:shadow-lg transition-shadow">
             <Link href={`/product/${product.id}`}>
           
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
                   className="w-full h-48 object-cover rounded-md mb-4"

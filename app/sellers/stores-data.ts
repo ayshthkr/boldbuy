@@ -185,3 +185,66 @@ export const getAllOrders = (): Order[] => {
   return stores.flatMap(store => store.orders);
 };
 
+export interface Complaint {
+  id: number;
+  store_id: number;
+  order_id: number;
+  customer_id: number;
+  date_filed: string;
+  status: 'new' | 'in progress' | 'on hold' | 'addressed';
+  description: string;
+  resolution?: string;
+}
+
+export const complaints: Complaint[] = [
+  {
+    id: 1,
+    store_id: 1,
+    order_id: 1,
+    customer_id: 201,
+    date_filed: "2024-01-18T10:30:00Z",
+    status: "new",
+    description: "Item received was damaged during shipping."
+  },
+  {
+    id: 2,
+    store_id: 2,
+    order_id: 3,
+    customer_id: 203,
+    date_filed: "2024-01-17T14:45:00Z",
+    status: "in progress",
+    description: "Wrong size delivered. Requested exchange."
+  },
+  {
+    id: 3,
+    store_id: 3,
+    order_id: 5,
+    customer_id: 205,
+    date_filed: "2024-01-16T09:15:00Z",
+    status: "on hold",
+    description: "Product quality not as advertised."
+  },
+  {
+    id: 4,
+    store_id: 4,
+    order_id: 7,
+    customer_id: 207,
+    date_filed: "2024-01-15T16:20:00Z",
+    status: "addressed",
+    description: "Late delivery of time-sensitive order.",
+    resolution: "Refunded shipping costs and provided store credit."
+  },
+  {
+    id: 5,
+    store_id: 5,
+    order_id: 9,
+    customer_id: 209,
+    date_filed: "2024-01-19T11:00:00Z",
+    status: "new",
+    description: "Missing components in the package."
+  }
+];
+
+export const getAllComplaints = (): Complaint[] => {
+  return complaints;
+};
