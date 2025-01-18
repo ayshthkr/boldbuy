@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import CartCircle from '@/components/derived/Cartcircle';
 import { UserNavbar } from '@/components/derived/usernavbar';
+import Image from 'next/image';
 
 const dummyProducts = [
   {
@@ -136,7 +137,7 @@ export default function Page() {
         {filteredProducts.map((product) => (
           <div key={product.id} className="border p-4 rounded-md shadow-md hover:shadow-lg transition-shadow">
             <Link href={`/product/${product.id}`}>
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
                 className="w-full h-48 object-cover rounded-md mb-4"

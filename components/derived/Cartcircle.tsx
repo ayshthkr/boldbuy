@@ -1,5 +1,6 @@
 "use client"
 import { useCart } from '@/app/context/CartContext';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa'; // Importing cart icon from react-icons
@@ -52,7 +53,7 @@ const CartCircle = () => {
             ) : (
               cart.map((item) => (
                 <div key={item.id} className="flex items-center space-x-4 mb-4">
-                  <img
+                  <Image
                     src={item.product.image}
                     alt={item.product.name}
                     className="w-16 h-16 object-cover rounded-md"

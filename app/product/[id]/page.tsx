@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import Link from 'next/link';
 import CartCircle from '@/components/derived/Cartcircle';
+import Image from 'next/image';
 
 const dummyProducts = [
     {
@@ -77,7 +78,7 @@ const Page = () => {
       <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">{product.name}</h1>
 
       <div className="flex justify-center mb-6">
-        <img
+        <Image
           src={product.image}
           alt={product.name}
           className="w-64 h-64 object-cover rounded-md"
@@ -126,7 +127,7 @@ const Page = () => {
         {relatedProducts.map((related) => (
           <div key={related.id} className="border p-4 rounded-md shadow-md hover:shadow-lg transition-shadow">
             <Link href={`/product/${related.id}`}>
-              <img
+              <Image
                 src={related.image}
                 alt={related.name}
                 className="w-full h-48 object-cover rounded-md mb-4"

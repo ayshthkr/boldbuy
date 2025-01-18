@@ -25,7 +25,7 @@ const Checkout = () => {
 
   // Handle placing the order
   const newCart = cart.map(({ product, ...rest }) => {
-    const { description, image, ...filteredProduct } = product;
+    const { ...filteredProduct } = product;
     return { ...rest, product: filteredProduct };  
   });
   const time=new Date().getTime()

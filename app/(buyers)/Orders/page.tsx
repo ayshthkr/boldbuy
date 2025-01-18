@@ -40,7 +40,7 @@ const Orders = () => {
               <div className="mt-4 space-y-2">
                 <h4 className="text-lg font-semibold">Items:</h4>
                 <ul className="list-disc list-inside">
-                  {order.items.map((item) => (
+                  {order.items.map((item: any) => (
                     <li key={item.id} className="flex justify-between">
                       <span>{item.product.name} x {item.quantity}</span>
                       <span>${(item.product.price * item.quantity).toFixed(2)}</span>
