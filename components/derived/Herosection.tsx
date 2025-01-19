@@ -1,10 +1,12 @@
 "use client"
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+
 
 const ShuffleHero = () => {
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className="w-full h-screen  px-4 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
       <div>
 
         <h3 className="text-4xl md:text-6xl font-semibold">
@@ -15,10 +17,12 @@ const ShuffleHero = () => {
         </p>
         <div className="flex gap-4">
           <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
-            start shopping now
+            <Link href="/shop">start shopping now</Link>
+            
+            
           </button>
           <button className="border-indigo-500 border-2 text-black font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 hover:text-white active:scale-95">
-            explore our collections
+          <Link href="/shop">explore our collections</Link>
           </button>
         </div>
 
@@ -49,51 +53,48 @@ const squareData = [
 
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1569074187119-c87815b476da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80",
+    src: "https://www.fabhotels.com/blog/wp-content/uploads/2019/01/Shopping-3.jpg",
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    src: "https://aispi.co/wp-content/uploads/2022/02/shopping1.jpeg",
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1599586120429-48281b6f0ece?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    src: "https://s3-eu-west-1.amazonaws.com/images.pxlpartner.ch/n250006927/orig/250058729.jpg",
   },
   {
     id: 8,
-    src: "https://plus.unsplash.com/premium_photo-1671436824833-91c0741e89c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    src: "https://nmgprod.s3.amazonaws.com/media/files/8f/95/8f959c16f63aa9d4062b4147d508a91b/cover_image_1677176741.jpeg.760x400_q85_crop_upscale.jpg",
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR69_qiY4J6cNcXZgkWRQ2N2GHO7IU0bat-Jw&s",
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1610768764270-790fbec18178?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    src: "https://www.gulshanone29.com/images/shops-banner-mobile.webp",
   },
   {
     id: 11,
-    src: "https://images.unsplash.com/photo-1507034589631-9433cc6bc453?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=684&q=80",
+    src: "https://img.freepik.com/free-vector/shopping-cart-with-bags-gifts-concept-illustration_114360-18775.jpg",
   },
-  {
-    id: 12,
-    src: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=882&q=80",
-  },
+
   {
     id: 13,
-    src: "https://images.unsplash.com/photo-1560089000-7433a4ebbd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    src: "https://www.pymnts.com/wp-content/uploads/2018/12/millennials-direct-to-consumer-furniture-shopping.jpg",
   },
   {
     id: 14,
-    src: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+    src: "https://images.woodenstreet.de/image/data/store%20page/new/noida/new/5.jpg",
   },
   {
     id: 15,
-    src: "https://images.unsplash.com/photo-1606244864456-8bee63fce472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=681&q=80",
+    src: "https://ourcitymarkets.com/wp-content/uploads/2021/07/ELECT-600x387.png",
   },
   {
     id: 16,
-    src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1820&q=80",
+    src: "https://indian-retailer.s3.ap-south-1.amazonaws.com/s3fs-public/2021-05/revenge%20shopping.jpg",
   },
 ];
 

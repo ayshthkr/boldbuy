@@ -20,10 +20,13 @@ export function UserNavbar() {
     <nav className="bg-blue-600 p-4 text-white">
       <ul className="flex space-x-4 justify-center">
         <li>
+          <Link href="/">BoldBuy</Link>
+        </li>
+        <li>
           <Link href="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link href="/buyers">Buyers Page</Link>
+          <Link href="/shop">Shop</Link>
         </li>
         <li>
           <Link href="/wishlist">Wishlist</Link>

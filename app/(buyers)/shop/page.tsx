@@ -99,7 +99,7 @@ export default function Page() {
       <CartCircle />
       <h1 className="text-3xl font-bold text-center text-blue-600 mb-6">Product Search</h1>
 
-      <div className="flex justify-center space-x-4 mb-6">
+      <div className="md:flex md:justify-center space-x-4 mb-6">
         <input
           type="text"
           placeholder="Search products..."

@@ -18,21 +18,21 @@ const testimonials: Testimonial[] = [
         name: "John Smith",
         position: "Lead Developer",
         comment: "Working with this team has been an incredible experience. Their dedication to excellence is unmatched.",
-        image: "https://via.placeholder.com/150"
+        image: "https://cdn-images.dzcdn.net/images/artist/086f50bb1ce0e3033634e5e9c2d75462/1900x1900-000000-80-0-0.jpg"
     },
     {
         id: 2,
         name: "Sarah Johnson",
         position: "Project Manager",
         comment: "The attention to detail and professional approach made our collaboration seamless and successful.",
-        image: "https://via.placeholder.com/150"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToE9t43UR3fZHxjv7w6lgnrOotiXW2jiH64Q&s"
     },
     {
         id: 3,
         name: "Mike Richards",
         position: "Technical Lead",
         comment: "I've never worked with a more responsive and skilled team. They exceeded all expectations.",
-        image: "https://via.placeholder.com/150"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBHyXGPPUw5_YHqY2i64PC37mF3G5u0zVqaQ&s"
     }
 ];
 
@@ -73,6 +73,8 @@ const BuyerTestimonials = () => {
                                 <Image
                                     src={testimonials[currentIndex].image}
                                     alt={testimonials[currentIndex].name}
+                                    width={100}
+                                    height={100}
                                     className="w-24 h-24 rounded-full object-cover mb-4"
                                 />
                                 <p className="text-gray-800 text-lg italic mb-6">

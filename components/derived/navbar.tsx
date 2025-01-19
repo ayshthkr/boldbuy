@@ -13,21 +13,23 @@ import {
 
 export function Navbar() {
   return (
-    <header className="border-b-2 fixed top-0 w-full backdrop-blur-md">
-      <div className="container mx-auto px-4">
+    <header className=" border-b-2 fixed top-0 w-full backdrop-blur-md z-[10] ">
+      <div className="container mx-auto px-4 relative z-50">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="font-semibold text-xl">
             BoldBuy
           </Link>
 
           {/* Mobile Menu */}
-          <Sheet>
+          <div className="z-[100] ">
+          <Sheet >
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
+            <div className="bg-yellow-300 z-[100000]">
             <SheetContent side="right">
               <SheetTitle>Menu</SheetTitle>
               <nav className="flex flex-col gap-4">
@@ -45,10 +47,15 @@ export function Navbar() {
                 </Link>
               </nav>
             </SheetContent>
+            </div>
+            
           </Sheet>
+          </div>
+
+      
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className=" relative hidden md:flex items-center gap-6 z-[1000]">
             <Link href="/" className="text-sm font-medium hover:text-primary">
               Home
             </Link>

@@ -74,6 +74,8 @@ export default function WishlistPage() {
                 <Image
                   src={product.image}
                   alt={product.name}
+                  width={300}
+                  height={200}
                   className="w-full h-48 object-cover rounded-md mb-4"
                 />
                 <h3 className="text-xl font-semibold text-blue-600">{product.name}</h3>

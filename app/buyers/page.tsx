@@ -7,6 +7,7 @@ import AboutBuyersSupport from '@/components/derived/AboutBuyersSupport';
 import BuyerTestimonials from '@/components/derived/Buyerstestimonals';
 import BuyersConnect from '@/components/derived/BuyersConnect';
 import Gallery from '@/components/derived/Buyersinfo';
+
 const page = () => {
   return (
     <>

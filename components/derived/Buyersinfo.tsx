@@ -1,4 +1,5 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 interface FeatureProps {
@@ -50,7 +51,13 @@ const Gallery: React.FC = () => {
         {/* Image Placeholder */}
         <div className="flex items-center justify-center">
           <div className="w-72 h-72 bg-gray-200 flex items-center justify-center rounded-lg">
-            <span className="text-gray-500">Image Placeholder</span>
+            <Image
+            width={300}
+            height={300}
+              src="https://intersmart.ae/wp-content/uploads/2024/08/Web-Design-for-E-commerce.webp"
+              alt="New Image"
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
         </div>
 
@@ -65,7 +72,7 @@ const Gallery: React.FC = () => {
       {/* Button */}
       <div className="mt-12">
         <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">
-          Start Shopping
+         <Link href='/shop'> Start Shopping</Link> 
         </button>
       </div>
     </div>

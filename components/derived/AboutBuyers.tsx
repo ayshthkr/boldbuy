@@ -31,7 +31,8 @@ export function AboutBuyers() {
           <li>🎯 Personalized shopping recommendations</li>
         </ul>
         <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:border-blue-700 hover:text-blue-700 transition-colors w-fit">
-          View Your Orders
+          <Link href="/Orders">View Your Orders</Link>
+         
         </button>
       </div>
     </div>
@@ -43,6 +44,7 @@ export function AboutBuyers() {
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
+import Link from "next/link";
 
  const TextParallaxContentExample = () => {
   return (
