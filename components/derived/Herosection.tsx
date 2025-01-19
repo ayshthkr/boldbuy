@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 const ShuffleHero = () => {
   return (
-    <section className="w-full h-screen  px-4 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
+    <section className="w-full h-screen  px-8 lg:px-16 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-8xl mx-auto">
       <div>
 
         <h3 className="text-4xl md:text-6xl font-semibold">
@@ -18,11 +18,9 @@ const ShuffleHero = () => {
         <div className="flex gap-4">
           <button className="bg-indigo-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
             <Link href="/shop">start shopping now</Link>
-            
-            
           </button>
           <button className="border-indigo-500 border-2 text-black font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 hover:text-white active:scale-95">
-          <Link href="/shop">explore our collections</Link>
+            <Link href="/shop">explore our collections</Link>
           </button>
         </div>
 
@@ -114,13 +112,17 @@ const generateSquares = () => {
 };
 
 const ShuffleGrid = () => {
-  const timeoutRef = useRef<any>(null);
-  const [squares, setSquares] = useState(generateSquares());
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [squares, setSquares] = useState([]);
 
   useEffect(() => {
     shuffleSquares();
 
-    return () => clearTimeout(timeoutRef.current!);
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    }
   }, []);
 
   const shuffleSquares = () => {
@@ -130,7 +132,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
+    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1 p-4">
       {squares.map((sq: any) => sq)}
     </div>
   );
