@@ -3,6 +3,7 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import TopLoader from "nextjs-toploader";
 import { CartProvider } from "./context/CartContext";
+import ChatBox from "@/components/derived/ChatBox";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <TopLoader color="#5506FC" height={3} crawl />
         <CartProvider>
         {children}
+        <ChatBox></ChatBox>
         </CartProvider>
       </body>
     </html>
