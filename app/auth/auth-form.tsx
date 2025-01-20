@@ -45,7 +45,7 @@ export function AuthForm() {
       localStorage.setItem("user", JSON.stringify(newUser));
 
       setIsLoading(false);
-      router.push("/dashboard");
+      router.push("/sellers/profile-setup");
     }
   }
 

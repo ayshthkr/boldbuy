@@ -4,7 +4,6 @@ import { StoreDetails } from "./store-details"
 import { StoreInventory } from "./store-inventory"
 import { StoreAnalytics } from "./store-analytics"
 import { StoreOrders } from "./store-orders"
-import { Navbar } from "@/components/derived/navbar"
 import { Footer } from "@/components/derived/footer"
 
 export default async function StorePage({ params }: {params: Promise<{id: string}>}) {
@@ -16,8 +15,7 @@ export default async function StorePage({ params }: {params: Promise<{id: string
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="bg-gray-50 w-full items-center justify-center">
       <main className="container mx-auto px-4 py-28">
         <StoreDetails store={store} />
         
@@ -35,4 +33,3 @@ export default async function StorePage({ params }: {params: Promise<{id: string
     </div>
   )
 }
-

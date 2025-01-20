@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ProfileSetupPage() {
   return (
-    <div className="min-h-screen bg-muted">
+    <div className="min-h-screen bg-muted w-full items-center justify-center">
       <Navbar />
       <main className="container mx-auto py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
