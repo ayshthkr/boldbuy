@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Icons } from "@/components/ui/icons";
+import { MessageLoading } from "@/components/derived/loading";
 
 export function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
@@ -93,7 +94,7 @@ export function AuthForm() {
         <Button className="w-full" type="submit" disabled={isLoading}>
           {isLoading ? (
             <>
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              <MessageLoading />
               Please wait
             </>
           ) : isLogin ? (

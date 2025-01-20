@@ -1,23 +1,21 @@
 import CTASection from "@/components/derived/CTA";
-import FeatureSection from "@/components/derived/FeatureSection";
+import { FeaturesSectionWithHoverEffects } from "@/components/derived/feature-section";
+import { FollowingPointerCTA } from "@/components/derived/following-pointer-cta";
 import { Footer } from "@/components/derived/footer";
 import HeroHeader from "@/components/derived/HeroHeader";
 import HowItWorks from "@/components/derived/Howitworks";
 import { Navbar } from "@/components/derived/navbar";
-import SupportPage from "./(home)/support/page";
-
 
 export default function Home() {
   return (
-    <>
-    <Navbar></Navbar>
-    <HeroHeader></HeroHeader>
-    <FeatureSection></FeatureSection>
-    <HowItWorks></HowItWorks>
-    <CTASection></CTASection>
-    <SupportPage/>
-    <Footer></Footer>
-    </>
-   
+    <div className="flex w-full min-h-screen flex-col items-center justify-center">
+      <Navbar />
+      <HeroHeader />
+      <FeaturesSectionWithHoverEffects />
+      <HowItWorks />
+      <CTASection />
+      <FollowingPointerCTA />
+      <Footer />
+    </div>
   );
 }

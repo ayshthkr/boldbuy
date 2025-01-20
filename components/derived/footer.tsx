@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Package2 } from "lucide-react";
+import { AnimatedTooltip } from "./animated-tooltip";
 
 export function Footer() {
   return (
-    <footer className="border-t">
+    <footer className="border-t w-full">
       <div className="container mx-auto px-4 py-12">
         {/* Mobile Footer */}
         <div className="flex flex-col items-center space-y-8 md:hidden">
@@ -13,20 +14,17 @@ export function Footer() {
           </Link>
 
           <nav className="flex flex-col items-center space-y-6 text-base">
-            <Link href="/about" className="hover:text-primary">
+            <Link href="/" className="hover:text-primary">
               About Us
             </Link>
-            <Link href="/contact" className="hover:text-primary">
+            <Link href="/support" className="hover:text-primary">
               Contact Us
             </Link>
-            <Link href="/services" className="hover:text-primary">
+            <Link href="/sellers" className="hover:text-primary">
               Our Services
             </Link>
-            <Link href="/get-started" className="hover:text-primary">
-              Get Started
-            </Link>
-            <Link href="/blog" className="hover:text-primary">
-              Blog Insights
+            <Link href="/buyers" className="hover:text-primary">
+              Buyer&apos;s Section
             </Link>
           </nav>
 
@@ -54,7 +52,7 @@ export function Footer() {
           </div>
 
           <p className="text-sm text-center text-gray-600 mt-8">
-            © 2024 BoldBuy. All rights reserved.
+            © 2025 Buy. All rights reserved.
           </p>
         </div>
 
@@ -66,7 +64,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/about"
+                    href="/"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     About Us
@@ -74,7 +72,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="/support"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     Contact Us
@@ -82,7 +80,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/get-started"
+                    href="/auth"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     Get Started
@@ -96,15 +94,15 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/blog"
+                    href="/sellers"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
-                    Blog Insights
+                    Sellers Section
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/help"
+                    href="/support"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     Help Center
@@ -112,10 +110,10 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/guides"
+                    href="/buyers"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
-                    Guides
+                    Buyer&apos;s Section
                   </Link>
                 </li>
               </ul>
@@ -126,7 +124,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <Link
-                    href="/services"
+                    href="/sellers"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     Our Services
@@ -134,7 +132,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/pos"
+                    href="/sellers/#inventoryFeatures"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     POS System
@@ -142,7 +140,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/inventory"
+                    href="/sellers/#inventoryFeatures"
                     className="text-sm text-gray-600 hover:text-primary"
                   >
                     Inventory Management
@@ -185,8 +183,11 @@ export function Footer() {
           <div className="mt-12 pt-8 border-t">
             <div className="flex justify-between items-center">
               <p className="text-sm text-gray-600">
-                © 2024 BoldBuy. All rights reserved.
+                © 2025 BoldBuy. All rights reserved.
               </p>
+              <div className="flex gap-2 items-center text-xl font-bold ">
+              Made with ❤️ by <AnimatedTooltip items={people} />
+              </div>
               <div className="flex items-center gap-6">
                 <Link
                   href="/legal"
@@ -214,3 +215,34 @@ export function Footer() {
     </footer>
   );
 }
+
+const people = [
+  {
+    id: 1,
+    name: "Aadi Yadav",
+    designation: "Web Dev, Design",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5603AQE59f8c-dCuNQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728719516414?e=1743033600&v=beta&t=nSgwdjVzvcei_kH3qM3WGX6sdeIsCx6264pHJNFzmY8",
+  },
+  {
+    id: 2,
+    name: "Ayush Thakur",
+    designation: "Web Dev, ML",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5603AQHhiNWxoTP40A/profile-displayphoto-shrink_200_200/B56ZQq8HAXHQAY-/0/1735887188470?e=1743033600&v=beta&t=T5aUvBFxOj1EJV8JyMVNOk94AIumr0EHNg0oHoyJFvU",
+  },
+  {
+    id: 3,
+    name: "Raj Raman",
+    designation: "Web Dev, Design",
+    image:
+      "https://pps.whatsapp.net/v/t61.24694-24/463605538_938546488320189_4768925806246506298_n.jpg?ccb=11-4&oh=01_Q5AaINdMuNEymKC1sBmOuhfpBCC2xTg2y7ZBpwuqPUkIdCvj&oe=67922549&_nc_sid=5e03e0&_nc_cat=106",
+  },
+  {
+    id: 4,
+    name: "Yashaswini Sharma",
+    designation: "Web Dev, Design",
+    image:
+      "https://media.licdn.com/dms/image/v2/D5603AQGobMDP9F6zPw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1714486264094?e=1743033600&v=beta&t=6F7LpxjKB44LPBTzbhMj3N61ms5S3PZnIQpF_09HKJ8",
+  },
+];

@@ -1,17 +1,59 @@
-import React from "react";
+"use client";
 
-const HeroHeader = () => {
+import { cn } from "@/lib/utils";
+import { GridPattern } from "@/components/derived/grid-pattern";
+import { ContainerScroll } from "./container-scroll-animation";
+import Image from "next/image";
+
+function HeroHeader() {
   return (
-    <header className="flex flex-col items-center justify-center h-screen text-center bg-gray-50">
-      <h1 className="text-4xl font-bold">Welcome to BoldBuy</h1>
-      <p className="mt-4 text-lg text-gray-600">
-        The Unified Digital Platform for Sellers and Buyers
-      </p>
-      <button className="px-6 py-3 mt-6 text-white bg-purple-600 rounded hover:bg-purple-700">
-        Get Started
-      </button>
-    </header>
+    <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
+      <GridPatternLinearGradient>
+        <ContainerScroll
+          titleComponent={
+            <>
+              <h1 className="text-4xl font-semibold text-black dark:text-white">
+                The Unified Digital Platform <br />
+                <span className="text-4xl md:text-[5rem] font-bold mt-1 leading-none text-primary">
+                  For Sellers and Buyers
+                </span>
+              </h1>
+            </>
+          }
+        >
+          <Image
+            src={`/demo-main-page.png`}
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
+      </GridPatternLinearGradient>
+    </div>
   );
-};
+}
+
+function GridPatternLinearGradient({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
+      {children}
+      <GridPattern
+        width={20}
+        height={20}
+        x={-1}
+        y={-1}
+        className={cn(
+          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] "
+        )}
+      />
+    </div>
+  );
+}
 
 export default HeroHeader;

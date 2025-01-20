@@ -1,27 +1,71 @@
-import React from "react";
+"use client";
 
-const HowItWorks = () => {
-  const steps = [
-    "Sellers register and set up their inventory.",
-    "Customers place orders online.",
-    "BoldBuy handles order fulfillment and delivery.",
-  ];
+import { useRef } from "react";
+import { TextGenerateEffect } from "./text-generate-effect";
 
+const words = [
+  "How BoldBuy Works",
+  "   1. Seller Registration",
+  "       Sellers register on BoldBuy, complete KYC, and set up their inventory for customers to browse.",
+  "   2. Customers Place Orders",
+  "       Customers explore products, place orders online, and enjoy the convenience of local markets from anywhere.",
+  "   3. Order Fulfillment and Delivery",
+  "       BoldBuy ensures smooth order fulfillment and reliable delivery, connecting sellers and buyers seamlessly.",
+];
+
+export default function HowItWorks() {
+  const divRef = useRef<HTMLDivElement>(null);
   return (
-    <section className="p-8 bg-white">
-      <h2 className="text-2xl font-bold text-center">How It Works</h2>
-      <ol className="mt-6 space-y-4">
-        {steps.map((step, index) => (
-          <li key={index} className="flex items-start">
-            <span className="flex items-center justify-center w-8 h-8 text-white bg-purple-600 rounded-full">
-              {index + 1}
-            </span>
-            <p className="ml-4 text-gray-600">{step}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-};
+    <div className="container px-10 md:px-32 py-16 mx-auto !whitespace-pre-wrap relative w-full" ref={divRef}>
+      <TextGenerateEffect duration={2} filter={false} words={words[0]} color="text-primary" 
+      ref={divRef}
+      />
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[1]}
+        color="text-primary"
+        ref={divRef}
+      />
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[2]}
+        color="text-secondary"
+        ref={divRef}
+      />
 
-export default HowItWorks;
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[3]}
+        color="text-primary"
+        ref={divRef}
+      />
+
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[4]}
+        color="text-secondary"
+        ref={divRef}
+      />
+
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[5]}
+        color="text-primary"
+        ref={divRef}
+      />
+
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[6]}
+        color="text-secondary"
+        ref={divRef}
+      />
+    </div>
+  );
+}

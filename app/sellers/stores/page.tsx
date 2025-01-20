@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { StoreList } from "./store-list";
 import { AddStoreButton } from "./add-store-button";
-import { Navbar } from "@/components/derived/navbar";
 import { Footer } from "@/components/derived/footer";
 
 export const metadata: Metadata = {
@@ -11,9 +10,8 @@ export const metadata: Metadata = {
 
 export default function StoresPage() {
   return (
-    <>
+    <div className="w-full items-center justify-center">
       <div className="min-h-[70vh] bg-gray-50">
-        <Navbar />
         <main className="container mx-auto px-4 py-28">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
             <div>
@@ -28,6 +26,6 @@ export default function StoresPage() {
         </main>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

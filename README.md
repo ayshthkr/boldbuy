@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# BoldBuy
 
-First, run the development server:
+**BoldBuy** is a digital platform that connects local sellers with customers by virtualizing traditional markets. It enables sellers to easily manage their inventory, fulfill orders, and expand their reach, while offering customers a seamless way to shop from local markets online. Designed for small and medium businesses, market associations, and local sellers, BoldBuy empowers them to thrive in the digital economy, while providing buyers with convenient access to diverse and authentic products.
+
+## Tech Stack
+
+**Client:** React, TailwindCSS
+
+**Server:** NextJS, Supabase
+
+### **Platform Features**  
+- Quick and easy seller onboarding with KYC verification.  
+- Real-time inventory management and updates.  
+- Aggregated virtual warehouses for limitless inventory.  
+- Seamless order aggregation and fulfillment.  
+- Intuitive SaaS-based POS system for sellers.  
+- Advanced reporting and analytics for data-driven decisions.  
+- Multi-store management from a unified dashboard.  
+- Flexible catalog creation and bulk upload capabilities.  
+## Installation
+
+Clone using git 
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/ayshthkr/boldbuy/
+  cd boldbuy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install the dependencies using your package manager(ex: Bun)
+```bash
+bun i
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start the development server
+```bash
+bun run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Alternatively, start using the production build
+```bash
+bun run build
+bun run dev
+```
+## Screenshots
 
-## Learn More
+![App Screenshot](https://raw.githubusercontent.com/ayshthkr/boldbuy/refs/heads/main/public/demo-main-page.png)
+![App Screenshot](https://raw.githubusercontent.com/ayshthkr/boldbuy/refs/heads/main/public/demo-sellers-1.png)
+![App Screenshot](https://raw.githubusercontent.com/ayshthkr/boldbuy/refs/heads/main/public/demo-sellers-2.png)
+![App Screenshot](https://raw.githubusercontent.com/ayshthkr/boldbuy/refs/heads/main/public/demo-sellers-3.png)
+![App Screenshot](https://raw.githubusercontent.com/ayshthkr/boldbuy/refs/heads/main/public/demo-shop.png)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Authors
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Aadi Yadav](https://www.github.com/aadiyadav)
+- [Ayush Thakur](https://www.github.com/ayshthkr)
+- [Raj Raman](https://www.github.com/errorui)
+- [Yashaswini Sharma](https://www.github.com/Yashaswini-Sharma)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

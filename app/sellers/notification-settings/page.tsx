@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { NotificationSettings } from "./notification-settings";
-import { Navbar } from "@/components/derived/navbar";
 import { Footer } from "@/components/derived/footer";
 
 export const metadata: Metadata = {
@@ -10,8 +9,7 @@ export const metadata: Metadata = {
 
 export default function NotificationsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <div className="min-h-screen bg-background w-full items-center justify-center">
       <main className="container mx-auto py-24 px-4">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold mb-2">Notification Preferences</h1>

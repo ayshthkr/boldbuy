@@ -87,7 +87,7 @@ export const InfiniteMovingCards = ({
       }
     };
     addAnimation();
-  }, []);
+  }, [direction, speed]);
   const [start, setStart] = useState(false);
   return (
     <div
