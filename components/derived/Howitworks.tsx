@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { TextGenerateEffect } from "./text-generate-effect";
 
 const words = [
@@ -14,25 +13,25 @@ const words = [
 ];
 
 export default function HowItWorks() {
-  const divRef = useRef<HTMLDivElement>(null);
   return (
-    <div className="container px-10 md:px-32 py-16 mx-auto !whitespace-pre-wrap relative w-full" ref={divRef}>
-      <TextGenerateEffect duration={2} filter={false} words={words[0]} color="text-primary" 
-      ref={divRef}
+    <div className="container px-10 md:px-32 py-16 mx-auto !whitespace-pre-wrap relative w-full">
+      <TextGenerateEffect
+        duration={2}
+        filter={false}
+        words={words[0]}
+        color="text-primary"
       />
       <TextGenerateEffect
         duration={2}
         filter={false}
         words={words[1]}
         color="text-primary"
-        ref={divRef}
       />
       <TextGenerateEffect
         duration={2}
         filter={false}
         words={words[2]}
         color="text-secondary"
-        ref={divRef}
       />
 
       <TextGenerateEffect
@@ -40,7 +39,6 @@ export default function HowItWorks() {
         filter={false}
         words={words[3]}
         color="text-primary"
-        ref={divRef}
       />
 
       <TextGenerateEffect
@@ -48,7 +46,6 @@ export default function HowItWorks() {
         filter={false}
         words={words[4]}
         color="text-secondary"
-        ref={divRef}
       />
 
       <TextGenerateEffect
@@ -56,7 +53,6 @@ export default function HowItWorks() {
         filter={false}
         words={words[5]}
         color="text-primary"
-        ref={divRef}
       />
 
       <TextGenerateEffect
@@ -64,7 +60,6 @@ export default function HowItWorks() {
         filter={false}
         words={words[6]}
         color="text-secondary"
-        ref={divRef}
       />
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
-import { RefObject, useEffect } from "react";
-import { motion, stagger, useAnimate, useInView } from "framer-motion";
+import {  useEffect } from "react";
+import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
@@ -9,20 +9,17 @@ export const TextGenerateEffect = ({
   filter = true,
   duration = 0.5,
   color = "text-black",
-  ref,
 }: {
   words: string;
   className?: string;
   filter?: boolean;
   duration?: number;
   color?: string;
-  ref: RefObject<HTMLDivElement | null>;
 }) => {
   const [scope, animate] = useAnimate();
   const wordsArray = words.split(" ");
-  const isInView = useInView(ref);
+  
   useEffect(() => {
-    if (isInView)
       animate(
         "span",
         {
@@ -34,7 +31,7 @@ export const TextGenerateEffect = ({
           delay: stagger(0.2),
         }
       );
-  }, [animate, duration, filter, isInView]);
+  }, [animate, duration, filter]);
 
   const renderWords = () => {
     return (
@@ -58,7 +55,7 @@ export const TextGenerateEffect = ({
 
   return (
     <div className={cn("font-bold", className)}>
-      <div className="mt-4">
+      <div className="">
         <div className=" dark:text-white text-black text-lg md:text-2xl leading-snug tracking-wide">
           {renderWords()}
         </div>

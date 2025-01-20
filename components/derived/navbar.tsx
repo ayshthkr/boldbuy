@@ -10,14 +10,33 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import Image from "next/image";
+import { TextGenerateEffect } from "./text-generate-effect";
 
 export function Navbar() {
   return (
     <header className=" border-b-2 fixed top-0 w-full backdrop-blur-md z-[10] ">
       <div className=" relative z-50 !max-w-[100vw]">
         <div className="flex h-16 items-center justify-between md:justify-evenly ">
-          <Link href="/" className="font-semibold text-xl">
-            BoldBuy
+          <Link href={"/"}>
+            <Button
+              variant={"default"}
+              className="flex items-center justify-center"
+            >
+              <TextGenerateEffect
+                duration={0.25}
+                filter={true}
+                words={"BoldBuy"}
+                color="text-white"
+              />
+              <Image
+                src="/favicon.png"
+                height={64}
+                width={64}
+                alt="BoldBuy Logo"
+                className="w-full h-full"
+              />
+            </Button>
           </Link>
 
           {/* Mobile Menu */}

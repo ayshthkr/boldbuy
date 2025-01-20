@@ -1,5 +1,6 @@
 import CTASection from "@/components/derived/CTA";
 import { FeaturesSectionWithHoverEffects } from "@/components/derived/feature-section";
+import ComparisonForTranslation from "@/components/derived/feature-with-image-comparison";
 import { FollowingPointerCTA } from "@/components/derived/following-pointer-cta";
 import { Footer } from "@/components/derived/footer";
 import HeroHeader from "@/components/derived/HeroHeader";
@@ -15,6 +16,7 @@ export default function Home() {
       <HowItWorks />
       <CTASection />
       <FollowingPointerCTA />
+      <ComparisonForTranslation />
       <Footer />
     </div>
   );

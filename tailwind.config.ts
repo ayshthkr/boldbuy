@@ -101,6 +101,11 @@ export default {
             opacity: "1",
           },
         },
+        shine: {
+          "0%": { backgroundPosition: "200% 0" },
+          "25%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
         ...animationConfig,
       },
       animation: {
@@ -109,6 +114,7 @@ export default {
         fadeIn: "fadeIn 1s ease-in-out forwards",
         fadeOut: "fadeOut 1s ease-in-out forwards",
         slideUp: "slideUp 0.25s ease-out forwards",
+        shine: "shine 3s ease-out infinite",
       },
     },
   },

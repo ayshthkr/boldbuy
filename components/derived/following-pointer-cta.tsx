@@ -98,7 +98,7 @@ const buyerContent = {
   author: "Ayush Thakur",
   title: "Continue as a buyer",
   description:
-    "Explore local markets and beyond with BoldBuy. Our platform offers a variety of products, fast deliveries, and great deals.",
+    "Explore local markets and beyond with BoldBuy, the all-in-one digital platform.",
   image: "/demo-shop.png",
   authorAvatar: "/user-icon.png",
   link: "/buyers"
