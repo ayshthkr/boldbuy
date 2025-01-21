@@ -32,7 +32,7 @@ export function AuthForm() {
         storedUser.password === password
       ) {
         setIsLoading(false);
-        router.push("/dashboard");
+        router.push("/sellers/profile-setup");
       } else {
         setIsLoading(false);
         alert("Invalid credentials!");
@@ -118,11 +118,11 @@ export function AuthForm() {
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-3">
-          <Button variant="outline" onClick={() => {}} disabled={isLoading}>
+          <Button variant="outline" onClick={() => { }} disabled={isLoading}>
             <Icons.google className="mr-2 h-4 w-4" />
             Google
           </Button>
-          <Button variant="outline" onClick={() => {}} disabled={isLoading}>
+          <Button variant="outline" onClick={() => { }} disabled={isLoading}>
             <Icons.facebook className="mr-2 h-4 w-4" />
             Facebook
           </Button>
